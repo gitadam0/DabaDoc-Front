@@ -1,0 +1,42 @@
+<style>
+  .parent-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin: 0;
+    background-color: #ffffff;
+  }
+
+  .center-box {
+    width: 400px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+</style>
+<div class="parent-container">
+<div  class="center-box">
+  <h4>Registre</h4>
+  <form>
+    <div class="form-outline mb-4">
+      <label class="form-label"  for="form2Example3">Email address</label>
+      <input type="login" id="form2Example3" name="login" class="form-control"
+             [(ngModel)]="login"
+      />
+    </div>
+    <div class="form-outline mb-4">
+      <label class="form-label" for="form2Example4">Password</label>
+      <input type="password" id="form2Example4" name="password" class="form-control" [(ngModel)]="password" />
+    </div>
+    <button type="submit" class="btn btn-primary btn-block mb-4"
+            (click)="onRegiistreSubmit()"
+    >Sign in</button>
+    <div class="text-center">
+    <p>Not a member? <a href="/login" >Login</a></p>
+    </div>
+  </form>
+</div>
+</div>
