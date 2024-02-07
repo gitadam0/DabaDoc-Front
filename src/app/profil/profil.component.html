@@ -1,2 +1,15 @@
-<h1>welcome</h1>
+
 <h1>WELCOM</h1>
+
+<div class="container mt-4">
+  <h2>Items List</h2>
+
+  <ul class="list-group">
+    <li *ngFor="let item of items" class="list-group-item">
+      <h4>{{ item.title }}</h4>
+      <p><strong>Content:</strong> {{ item.content }}</p>
+      <p><strong>Location:</strong> {{ item.location }}</p>
+      <p><strong>User:</strong> {{ item.user.username }}</p>
+    </li>
+  </ul>
+</div>

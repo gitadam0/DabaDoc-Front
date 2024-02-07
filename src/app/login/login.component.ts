@@ -36,10 +36,10 @@ export class LoginComponent {
     ).then((response) => {
       console.log(response);
       this.axiosService.setAuthTokens(response.data.token);
-      if( window.localStorage.getItem("auth_token")!==null){
-        console.log(window.localStorage.getItem("auth_token"));
-        this.router.navigate(['/profil']);
-        window.localStorage.setItem("name",this.login);
+      if( localStorage.getItem("auth_token")!==null){
+        console.log(localStorage.getItem("auth_token"));
+        this.router.navigate(['/main']);
+       localStorage.setItem("name",this.login);
       }
     });
 

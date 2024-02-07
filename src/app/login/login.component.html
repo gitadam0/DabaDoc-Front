@@ -16,9 +16,32 @@
     background-color: #ffffff;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   }
+
+
+  .btn-color{
+    background-color: #0e1c36;
+    color: #fff;
+
+  }
+
+  .profile-image-pic{
+    height: 200px;
+    width: 200px;
+    object-fit: cover;
+  }
+
+
+
+  .cardbody-color{
+    background-color: #ebf2fa;
+  }
+
+  a{
+    text-decoration: none;
+  }
 </style>
 
-<div class="parent-container">
+<!--<div class="parent-container">
   <div  class="center-box">
     <h4>login</h4>
     <form>
@@ -42,4 +65,45 @@
   </div>
 
 
+</div>-->
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 offset-md-3">
+      <div class="card my-5">
+
+        <form class="card-body cardbody-color p-lg-5">
+
+          <div class="text-center">
+            <img src="data:image/png;base64,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"
+                 class="img-fluid profile-image-pic img-thumbnail rounded-circle my-3"
+                 width="200px" alt="profile">
+          </div>
+
+          <div class="mb-3">
+            <input type="text" class="form-control" id="Username"
+                   [(ngModel)]="login"
+                   name="login"
+                   aria-describedby="loginHelp"
+                   placeholder="Login">
+          </div>
+          <div class="mb-3">
+            <input type="password"
+                   name="password"
+                   [(ngModel)]="password" class="form-control" id="password" placeholder="password">
+          </div>
+          <div class="text-center"><button type="submit" class="btn btn-color px-5 mb-5 w-100"
+                                           (click)="onLoginSubmit()"
+          >Login</button></div>
+          <div id="emailHelp" class="form-text text-center mb-5 text-dark">Not
+            Registered?
+
+            <a href="/registre" class="text-dark fw-bold" >Registre</a>
+          </div>
+        </form>
+      </div>
+
+    </div>
+  </div>
 </div>
