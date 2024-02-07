@@ -8,6 +8,7 @@ import {BodyComponent} from "./body/body.component";
 import {NotFoundComponent} from "./not-found/not-found.component";
 import {RegistreComponent} from "./registre/registre.component";
 import {AddQuestionFormComponent} from "./forms/add-question-form/add-question-form.component";
+import {QuestionDetailsPageComponent} from "./question-details-page/question-details-page.component";
 
 
 const routes: Routes = [
@@ -15,6 +16,7 @@ const routes: Routes = [
   { path: 'registre', component: RegistreComponent },
   { path: 'main', component: BodyComponent },
   { path: 'addquestionform', component: AddQuestionFormComponent },
+  { path: 'questionDetailsPage', component: QuestionDetailsPageComponent },
   //{ path: '', component: NotFoundComponent },
   { path: '', redirectTo: '/main', pathMatch: 'full' },
   //{ path: '**', redirectTo: '/login', pathMatch: 'full' },

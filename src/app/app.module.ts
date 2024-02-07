@@ -13,6 +13,7 @@ import { ProfilComponent } from './profil/profil.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { RegistreComponent } from './registre/registre.component';
 import { AddQuestionFormComponent } from './forms/add-question-form/add-question-form.component';
+import { QuestionDetailsPageComponent } from './question-details-page/question-details-page.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { AddQuestionFormComponent } from './forms/add-question-form/add-question
     NotFoundComponent,
     RegistreComponent,
     AddQuestionFormComponent,
+    QuestionDetailsPageComponent,
 
   ],
   imports: [

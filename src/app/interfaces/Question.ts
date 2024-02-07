@@ -4,4 +4,5 @@ export interface Question {
   content: string;
   location: string;
   username:string
+  answers:[]
 }

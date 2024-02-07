@@ -4,7 +4,6 @@ import {Router} from "@angular/router";
 import {QuestionsService} from "../services/questions.service";
 import {Question} from "../interfaces/Question";
 import {AuthService} from "../services/auth.service";
-import {QuestionPost} from "../interfaces/QuestionPost";
 
 @Component({
   selector: 'app-profil',
@@ -19,7 +18,7 @@ export class ProfilComponent {
   ) {
 
     console.log( 'window.localStorage.getItem("auth_token")');
-    if (window.localStorage.getItem("auth_token") === null) {
+    if (window.localStorage.getItem("auth_token") === null || window.localStorage.getItem("auth_token") === undefined) {
       console.log( '!!! user not loged in');
       router.navigate(['/login'])
     }else{
@@ -76,6 +75,12 @@ export class ProfilComponent {
     }, (error) => {
       console.error('Error posting questions:', error);
     });*/
+  }
+
+  goToQuestionDetailsPage(item:Question){
+    this.router.navigate(['/questionDetailsPage'],
+      { queryParams: { question: JSON.stringify(item) } });
+
   }
 
 }

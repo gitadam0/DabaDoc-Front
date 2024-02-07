@@ -227,9 +227,16 @@
     transform: scale(1.1);
   }
 
+  .welcom{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+  }
 </style>
-<h1>WELCOM</h1>
-
+<div class="welcom">
+<h1>Questions</h1>
+</div>
 <!--<div class="container mt-4">
   <h2>Items List</h2>
 
@@ -250,7 +257,7 @@
 
 
 
-<br><br><br><br>
+<br><br>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 
 <div class="section_our_solution">
@@ -258,7 +265,9 @@
     <div class="col-lg-12 col-md-12 col-sm-12">
       <div class="our_solution_category">
         <div class="solution_cards_box">
-          <div [ngClass]="{'multi_solution_card': items.length > 2}" *ngFor="let item of items" class="solution_card">
+          <div [ngClass]="{'multi_solution_card': items.length > 2}"
+               (click)="goToQuestionDetailsPage(item)"
+               *ngFor="let item of items" class="solution_card">
             <div class="hover_color_bubble"></div>
             <div class="so_top_icon">
               <svg id="Layer_1" enable-background="new 0 0 512 512" height="50" viewBox="0 0 512 512" width="40" xmlns="http://www.w3.org/2000/svg">
