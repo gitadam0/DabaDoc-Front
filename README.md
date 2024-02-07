@@ -1,6 +1,12 @@
 # DabaDoc
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.0.0.
+## Login / Registre
+the authentification was developed on the backend with JWT
+![image](https://github.com/gitadam0/DabaDoc-Front/assets/93042738/4aa36233-bce9-437e-9594-92171fd35d27)
+
+## Questions
+![image](https://github.com/gitadam0/DabaDoc-Front/assets/93042738/bc9492f8-7939-40c6-99c9-d38f93d5c7f6)
 
 ## Development server
 
