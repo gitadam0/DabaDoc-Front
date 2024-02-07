@@ -12,6 +12,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { ProfilComponent } from './profil/profil.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { RegistreComponent } from './registre/registre.component';
+import { AddQuestionFormComponent } from './forms/add-question-form/add-question-form.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { RegistreComponent } from './registre/registre.component';
     ProfilComponent,
     NotFoundComponent,
     RegistreComponent,
+    AddQuestionFormComponent,
 
   ],
   imports: [

@@ -4,6 +4,7 @@ import {Router} from "@angular/router";
 import {QuestionsService} from "../services/questions.service";
 import {Question} from "../interfaces/Question";
 import {AuthService} from "../services/auth.service";
+import {QuestionPost} from "../interfaces/QuestionPost";
 
 @Component({
   selector: 'app-profil',
@@ -64,5 +65,17 @@ export class ProfilComponent {
       console.error('Error fetching questions:', error);
     });
   }*/
+
+
+  addQuestion() {
+    this.router.navigate(['/addquestionform']);
+    /*this.questionsService.addQuestion(this.newQuestion).subscribe((data:Question[]) => {
+      console.log("data:::");
+      this.items = data;
+      console.log(data);
+    }, (error) => {
+      console.error('Error posting questions:', error);
+    });*/
+  }
 
 }

@@ -5,19 +5,39 @@
 
   .our_solution_category {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     flex-wrap: wrap;
     justify-content: space-between;
-    width: ;
+
   }
   .our_solution_category .solution_cards_box {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
     justify-content: center;
   }
-  .solution_cards_box .solution_card {
+  /*.solution_cards_box .solution_card */
 
-    flex: 0 50%;
+  .solution_card {
+    flex: 0 0 70%;
+
+    width: 100%;
+    background: #fff;
+    box-shadow: 0 2px 4px 0 rgba(136, 144, 195, 0.2),
+    0 5px 15px 0 rgba(37, 44, 97, 0.15);
+    border-radius: 15px;
+    margin: 8px;
+    padding: 10px 15px;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    min-height: 265px;
+    transition: 0.7s;
+  }
+  .multi_solution_card {
+    flex: 0 0 calc(30.33% - 25px);
+
+    width: 100%;
     background: #fff;
     box-shadow: 0 2px 4px 0 rgba(136, 144, 195, 0.2),
     0 5px 15px 0 rgba(37, 44, 97, 0.15);
@@ -31,8 +51,9 @@
     transition: 0.7s;
   }
 
+
   .solution_cards_box .solution_card:hover {
-    background: #309df0;
+    background: #42c3cac7;
     color: #fff;
     transform: scale(1.1);
     z-index: 9;
@@ -142,6 +163,9 @@
     height: 50px;
     object-fit: contain;
   }
+  .solution_card {
+    margin: 20px !important;
+  }
 
   /*start media query*/
   @media screen and (min-width: 320px) {
@@ -158,6 +182,14 @@
     .our_solution_category .solution_cards_box {
       flex: auto;
     }
+
+
+  }
+  @media only screen and (min-width: 368px) {
+
+    .solution_cards_box{
+      min-width: 200px !important;
+    }
   }
   @media only screen and (min-width: 768px) {
     .our_solution_category .solution_cards_box {
@@ -170,9 +202,29 @@
       top: -3rem;
     }
     .our_solution_category {
-      width: 50%;
+      width: 90%;
       margin: 0 auto;
     }
+  }
+  /* Floating button styles */
+  .floating-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #42c3ca;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    padding: 15px;
+    font-size: 20px;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s, transform 0.3s;
+  }
+
+  .floating-button:hover {
+    background-color: #309df0;
+    transform: scale(1.1);
   }
 
 </style>
@@ -198,7 +250,7 @@
 
 
 
-<br><br><br><br><br>
+<br><br><br><br>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 
 <div class="section_our_solution">
@@ -206,7 +258,7 @@
     <div class="col-lg-12 col-md-12 col-sm-12">
       <div class="our_solution_category">
         <div class="solution_cards_box">
-          <div *ngFor="let item of items" class="solution_card">
+          <div [ngClass]="{'multi_solution_card': items.length > 2}" *ngFor="let item of items" class="solution_card">
             <div class="hover_color_bubble"></div>
             <div class="so_top_icon">
               <svg id="Layer_1" enable-background="new 0 0 512 512" height="50" viewBox="0 0 512 512" width="40" xmlns="http://www.w3.org/2000/svg">
@@ -261,7 +313,7 @@
               <p>
                 {{ item.content }}</p>
               <div class="solu_user">
-                <p>User name: {{ item.user.username }}</p>
+                <p>User name: {{ item.username }}</p>
               </div>
               <button type="button" class="read_more_btn">Answer</button>
             </div>
@@ -272,3 +324,7 @@
     </div>
   </div>
 </div>
+
+<!-- Floating button -->
+<button (click)="addQuestion()" class="floating-button">
+ +</button>

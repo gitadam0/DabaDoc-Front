@@ -13,7 +13,14 @@ export class LoginComponent {
 
 
   constructor(private router: Router,private axiosService: AxiosService,) {
+    console.log( 'window.localStorage.getItem("auth_token")');
+    if (window.localStorage.getItem("auth_token") !== null) {
+      console.log( '!!! user already loged in');
+      router.navigate(['/main'])
+    }else{
+      console.log( '!!! user not loged in');
 
+    }
   }
   //active:string="login";
 

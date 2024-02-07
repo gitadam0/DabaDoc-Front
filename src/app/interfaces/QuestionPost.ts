@@ -1,7 +1,8 @@
-export interface Question {
+export interface QuestionPost {
   id: number;
   title: string;
   content: string;
   location: string;
-  username:string
+  user:{username:string
+  };
 }

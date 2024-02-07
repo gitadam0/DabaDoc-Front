@@ -5,6 +5,7 @@ import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
 import {Question} from "../interfaces/Question";
 import {AuthService} from "./auth.service";
+import {QuestionPost} from "../interfaces/QuestionPost";
 
 @Injectable({
   providedIn: 'root'
@@ -25,6 +26,9 @@ export class QuestionsService {
         Authorization: 'Bearer ' + localStorage.getItem("auth_token"),
       }}*/
     );
+  }
+  addQuestion(newQuestionData: QuestionPost): Observable<Question[]> {
+    return this.http.post<Question[]>(this.apiUrl, newQuestionData);
   }
 
 
