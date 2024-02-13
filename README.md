@@ -6,7 +6,8 @@ the authentification was developed on the backend with JWT
 ![image](https://github.com/gitadam0/DabaDoc-Front/assets/93042738/4aa36233-bce9-437e-9594-92171fd35d27)
 
 ## Questions
-![image](https://github.com/gitadam0/DabaDoc-Front/assets/93042738/bc9492f8-7939-40c6-99c9-d38f93d5c7f6)
+![image](https://github.com/gitadam0/DabaDoc-Front/assets/93042738/825f6e1f-86b9-435d-ba31-e034d28862d8)
+
 
 ## Development server
 
