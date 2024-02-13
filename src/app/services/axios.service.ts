@@ -23,6 +23,31 @@ export class AxiosService {
     }
   }
 
+  verifyToken(): Promise<boolean> {
+    console.log('verifyToken');
+    let token: string | null = this.getAuthTokens();
+
+    if (token===null) {
+      console.log('token is :'+token);
+      return Promise.resolve(false);
+    }else {
+
+      return this.requestToVerify('POST', '/verify-token', token!)
+        .then(response => {
+          // Token is valid, consider the user as logged in
+          return true;
+        })
+        .catch(error => {
+          // Token is invalid or expired, consider the user not logged in
+          console.error('Token verification failed:', error);
+          return false;
+        });
+
+    }
+
+  }
+
+
   request(method: string, url: string, data: UserDTOModel) : Promise<any> {
     let headers = {};
     if (this.getAuthTokens()!==null) {
@@ -32,6 +57,18 @@ export class AxiosService {
       method: method,
       url: url,
       data: data,
+      headers: headers
+    });
+  }
+  requestToVerify(method: string, url: string, token: string) : Promise<any> {
+    let headers = {};
+    if (this.getAuthTokens()!==null) {
+      headers = {"Authorization": "Bearer " +this.getAuthTokens() }
+    }
+    return axios({
+      method: method,
+      url: url,
+      data: token,
       headers: headers
     });
   }

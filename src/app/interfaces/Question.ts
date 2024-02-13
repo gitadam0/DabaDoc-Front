@@ -3,6 +3,7 @@ export interface Question {
   title: string;
   content: string;
   location: string;
-  username:string
-  answers:[]
+  username:string;
+  answers:[];
+  liked:boolean;
 }

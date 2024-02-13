@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {AxiosService} from "../services/axios.service";
 import {Router} from "@angular/router";
 import {QuestionsService} from "../services/questions.service";
@@ -10,7 +10,13 @@ import {AuthService} from "../services/auth.service";
   templateUrl: './profil.component.html',
   styleUrls: ['./profil.component.css']
 })
-export class ProfilComponent {
+export class ProfilComponent implements OnInit {
+
+
+  toggleHeartColor(item:Question) {
+    item.liked = !item.liked;
+  }
+
   constructor(private axiosService: AxiosService,
               private router: Router,
               private questionsService: QuestionsService,
@@ -26,6 +32,7 @@ export class ProfilComponent {
 
     }
     console.log( window.localStorage.getItem("auth_token"));
+    //axiosService.verifyToken();
   }
 
 
@@ -42,7 +49,6 @@ export class ProfilComponent {
    ];*/
 
   ngOnInit() {
-    //this.fetchStringFromApi();
     this.fetchDataFromApi();
   }
 

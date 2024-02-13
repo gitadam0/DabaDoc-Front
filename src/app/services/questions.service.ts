@@ -22,13 +22,19 @@ export class QuestionsService {
   getQuestions(): Observable<Question[]> {
 
     return this.http.get<Question[]>(this.apiUrl,
-      /*{headers: {
+      {headers: {
         Authorization: 'Bearer ' + localStorage.getItem("auth_token"),
-      }}*/
+      }}
     );
   }
   addQuestion(newQuestionData: QuestionPost): Observable<Question[]> {
-    return this.http.post<Question[]>(this.apiUrl, newQuestionData);
+    return this.http.post<Question[]>(
+      this.apiUrl,
+      newQuestionData,
+      {headers: {
+        Authorization: 'Bearer ' + localStorage.getItem("auth_token"),
+      }}
+    );
   }
 
 

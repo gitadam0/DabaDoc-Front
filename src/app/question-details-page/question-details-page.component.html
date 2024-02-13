@@ -1,25 +1,29 @@
+<style>
+  .list-group-item, .card-header {
+    display: flex;
+    justify-content: space-between;
+  }
+</style>
 <div class="container mt-4">
   <div class="card">
     <div class="card-header">
-      Post Title
+      {{ question.title || 'Error ' }} <em [style.color]="'grey'" > Posted By User: {{ question.username }} </em>
     </div>
     <div class="card-body">
       <p class="card-text">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero.
+        {{ question.content || 'There was an Error loading the page pls restart' }}
       </p>
+
+    </div>
+    <div class="card-header">
+      Answers :
     </div>
     <ul class="list-group list-group-flush">
-      <!-- Comment 1 -->
-      <li class="list-group-item">
-        <strong>User 1:</strong> Comment 1 content
-      </li>
-      <!-- Comment 2 -->
-      <li class="list-group-item">
-        <strong>User 2:</strong> Comment 2 content
+      <li *ngFor="let answer of question.answers" class="list-group-item">
+        {{ answer["answer"] }} <em [style.color]="'grey'" > UserName: {{ answer["user_id"] }} </em>
       </li>
     </ul>
     <div class="card-footer">
-      <!-- Add a form for adding new comments -->
       <form>
         <div class="form-group">
           <label for="commentInput">Add a Comment:</label>
