@@ -27,15 +27,21 @@ export class QuestionsService {
       }}
     );
   }
-  addQuestion(newQuestionData: QuestionPost): Observable<Question[]> {
-    return this.http.post<Question[]>(
-      this.apiUrl,
-      newQuestionData,
+  getQuestionByID(id:Number): Observable<Question> {
+
+    return this.http.get<Question>(this.apiUrl+"/"+id,
       {headers: {
-        Authorization: 'Bearer ' + localStorage.getItem("auth_token"),
-      }}
+          Authorization: 'Bearer ' + localStorage.getItem("auth_token"),
+        }}
     );
   }
+  addQuestion(newQuestionData: QuestionPost): Observable<Question> {
+    return this.http.post<Question>(
+      this.apiUrl,
+      newQuestionData
+    );
+  }
+
 
 
   /*addCategory(category: any): Observable<any> {

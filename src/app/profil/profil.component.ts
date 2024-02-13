@@ -4,6 +4,8 @@ import {Router} from "@angular/router";
 import {QuestionsService} from "../services/questions.service";
 import {Question} from "../interfaces/Question";
 import {AuthService} from "../services/auth.service";
+import {HttpErrorResponse} from "@angular/common/http";
+
 
 @Component({
   selector: 'app-profil',
@@ -59,6 +61,13 @@ export class ProfilComponent implements OnInit {
       console.log(data);
     }, (error) => {
       console.error('Error fetching questions:', error);
+
+      if (error instanceof HttpErrorResponse && error.status === 401) {
+        console.log("token expired");
+      } else {
+        console.log("errroorrr");
+      }
+
     });
   }
  /* fetchStringFromApi() {

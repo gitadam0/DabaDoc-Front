@@ -37,17 +37,6 @@
            name="Location"
            [(ngModel)]="newQuestion.location" id="Input3" placeholder="Location">
   </div>
-  <div class="form-group">
-    <label for="Input4">User username</label>
-    <input
-           name="username"
-           [(ngModel)]="newQuestion.user.username"
-           class="form-control" id="Input4" placeholder="User username">
-  </div>
-  <div class="form-group">
-    <label for="Input5">Password</label>
-    <input type="password" class="form-control" id="Input5" placeholder="Password">
-  </div>
   <button type="submit" (click)="addQuestion()" class="btn btn-primary">Submit</button>
 </form>
 </div>

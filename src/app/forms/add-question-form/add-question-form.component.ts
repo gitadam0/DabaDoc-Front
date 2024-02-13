@@ -30,18 +30,20 @@ export class AddQuestionFormComponent {
 
   newQuestion: QuestionPost = {
     id: 0,
-    title: 'Your Title',
-    content: 'Your content goes here',
-    location: 'Your Location',
+    title: '',
+    content: '',
+    location: '',
     user: {
-      username: "2"
+      username: window.localStorage.getItem("name")!.toString()
     }
   };
   addQuestion() {
-    this.questionsService.addQuestion(this.newQuestion).subscribe((data:Question[]) => {
+    //console.error('goood posting questions:', this.newQuestion);
+    this.questionsService.addQuestion(this.newQuestion).subscribe((data:Question) => {
       this.router.navigate(['/main'])
     }, (error) => {
       console.error('Error posting questions:', error);
+      console.error('Error posting questions:', error.message);
     });
   }
 }

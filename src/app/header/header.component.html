@@ -7,6 +7,40 @@
     justify-content: space-between;
     align-items: center;
   }
+
+  .logout {
+    border: 0;
+    border-radius: 15px;
+    background: linear-gradient(
+      140deg,
+      #42c3ca 0%,
+      #42c3ca 50%,
+      #42c3cac7 75%
+    ) !important;
+
+    cursor: pointer !important;
+    color: #fff;
+    font-weight: 500;
+    font-size: 1rem;
+    padding: 5px 16px;
+  }
+   .profil {
+    border: 0;
+    border-radius: 100%;
+    background: linear-gradient(
+      140deg,
+      #42c3ca 0%,
+      #42c3ca 50%,
+      #42c3cac7 75%
+    ) !important;
+    margin: 10px;
+    cursor: pointer !important;
+    color: #fff;
+    font-weight: 500;
+    font-size: 1rem;
+    padding: 5px 16px;
+  }
+
 </style>
 
 <header>
@@ -26,6 +60,10 @@
       </ul>
     </div>
   </nav>
-  <a href="" (click)="logout()">Log out</a>
+  <div>
+<!-- <a href="" (click)="logout()">Log out</a>-->
+    <button href="" (click)="logout()" type="button" class="logout">Log out</button>
+    <button (click)="logout()" type="button" class="profil"><i class="bi bi-person-circle"></i></button>
+  </div>
 </header>
 

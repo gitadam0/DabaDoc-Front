@@ -207,7 +207,7 @@
       margin: 0 auto;
     }
   }
-  /* Floating button styles */
+
   .floating-button {
     position: fixed;
     bottom: 20px;
@@ -221,11 +221,13 @@
     cursor: pointer;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     transition: background-color 0.3s, transform 0.3s;
+    z-index: 10;
   }
 
   .floating-button:hover {
     background-color: #309df0;
     transform: scale(1.1);
+    z-index: 10;
   }
 
   .welcom{
@@ -245,49 +247,6 @@
     position:relative;
     min-height:100%;
   }
-  .button{
-    width: 50px;
-    height: 50px;
-    top:50%;
-    position: fixed;
-    left: 50%;
-    margin-top: -45px;
-    margin-left: -50px;
-    border-radius: 5px;
-    background: none;
-    cursor: pointer;
-    transition: background 0.5s ease;
-  }
-  .button:hover{
-
-  }
-  .active#heart:before,.active#heart:after{
-    background: red !important;
-  }
-  #heart {
-    width: 100px;
-    height: 90px;
-    transition: background 0.5s ease;
-  }
-  #heart:before,
-  #heart:after {
-    transition: background 0.5s ease;
-    position: absolute;
-    content: "";
-    left: 50px;
-    top: 0;
-    width: 50px;
-    height: 80px;
-    background: dimgrey;
-    border-radius: 50px 50px 0 0;
-    transform: rotate(-45deg);
-    transform-origin: 0 100%;
-  }
-  #heart:after {
-    left: 0;
-    transform: rotate(45deg);
-    transform-origin :100% 100%;
-  }
   .like-answer-div{
     display: flex;
     justify-content: space-between;
@@ -302,6 +261,7 @@
     color: #000000;
     font-size: 25px;
   }
+
 
 
 </style>
@@ -391,3 +351,4 @@
 <!-- Floating button -->
 <button (click)="addQuestion()" class="floating-button">
  +</button>
+

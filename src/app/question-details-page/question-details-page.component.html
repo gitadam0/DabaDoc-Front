@@ -27,9 +27,9 @@
       <form>
         <div class="form-group">
           <label for="commentInput">Add a Comment:</label>
-          <textarea class="form-control" id="commentInput" rows="2"></textarea>
+          <textarea [(ngModel)]="commentText" name="commentText" class="form-control" id="commentInput" rows="2"></textarea>
         </div>
-        <button type="submit" class="btn btn-primary">Submit Comment</button>
+        <button type="submit" (click)="AddAnswer()" class="btn btn-primary">Submit Comment</button>
       </form>
     </div>
   </div>
